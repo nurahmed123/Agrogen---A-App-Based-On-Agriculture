@@ -10,6 +10,7 @@ import {
     Dimensions,
     Keyboard, // Import Keyboard
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { useFonts, Poppins_400Regular, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import { HammersmithOne_400Regular } from '@expo-google-fonts/hammersmith-one';
 import * as SplashScreen from 'expo-splash-screen'; // Import SplashScreen
@@ -17,6 +18,7 @@ import * as SplashScreen from 'expo-splash-screen'; // Import SplashScreen
 const { width, height } = Dimensions.get('window');
 
 const LoginScreen = () => {
+    const navigation = useNavigation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -30,6 +32,11 @@ const LoginScreen = () => {
         Poppins_700Bold,
         HammersmithOne_400Regular,
     });
+
+    const handleSkipPress = () => {
+        // Navigate to the next screen
+        navigation.navigate('Map');
+    };
 
     // Ensure Splash Screen stays visible while fonts are loading
     useEffect(() => {
@@ -186,7 +193,7 @@ const LoginScreen = () => {
                             </Text>
                         </TouchableOpacity>
                     </Animated.View>
-                    <TouchableOpacity style={styles.skipButton}>
+                    <TouchableOpacity onPress={handleSkipPress} style={styles.skipButton}>
                         <Text style={[styles.buttonText1, { fontFamily: 'Poppins_700Bold' }]}>Skip</Text>
                     </TouchableOpacity>
                 </View>
@@ -304,7 +311,7 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         paddingHorizontal: 50,
         borderRadius: 20,
-        background: 'linear - gradient(91.47deg, #007805 0.58 %, #044800 95.65 %)',
+        background: 'linear-gradient(91.47deg, #007805 0.58%, #044800 95.65%)',
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
 },
     skipButton: {
