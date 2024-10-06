@@ -6,6 +6,7 @@ import HomeScreen from "../../Screens/HomeScreen"; // Adjust the path accordingl
 import LoginScreen from "../../Screens/LoginScreen"; // Adjust the path accordingly
 import MapScreen from "../../Screens/MapScreen"; // Adjust the path accordingly
 import BangladeshScreen from "../../Screens/BangladeshScreen"; // Adjust the path accordingly
+import RajshahiScreen from "../../Screens/RajshahiScreen"; // Adjust the path accordingly
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ const AppNavigator = () => {
       <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Map" component={MapScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Bangladesh" component={BangladeshScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Rajshahi" component={RajshahiScreen} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 };

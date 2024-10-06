@@ -13,7 +13,7 @@ const BangladeshScreen = () => {
     const handlePressBangladesh = () => {
         console.log('Select Region');
         setMessage('Select Region');
-        navigation.navigate('Bangladesh');
+        navigation.navigate('Rajshahi');
     };
 
     return (
